@@ -32,8 +32,12 @@ header .logo {
     margin-bottom: 40px;
 }
 
-header.logo p {
+header .logo p {
     color: #9b9b9b;
+}
+
+.logo img {
+    width: 30px;
 }
 
 header form {
@@ -100,7 +104,25 @@ header .categorias a.activo {
 }
 
 .grid .item img {
-    width: 100%;
+    border-radius: 10px;
     cursor: pointer;
     vertical-align: top;
+    width: 100%;
+}
+
+/*-----------------------------------------*/
+/*  ScrollBar  */
+/*-----------------------------------------*/
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #9b9b9b;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
 }
