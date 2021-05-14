@@ -26,4 +26,28 @@ window.addEventListener('load', () => {
         const busqueda = evento.target.value;
         grid.filter((item) => item.getElement().dataset.etiquetas.includes(busqueda));
     });
+
+    // Agregamos listener para las imagenes
+    const popup = document.getElementById('popup');
+
+    document.querySelectorAll('.grid .item img').forEach((elemento) => {
+        elemento.addEventListener('click', () => {
+            const ruta = elemento.getAttribute('src');
+            const descripcion = elemento.parentNode.parentNode.dataset.descripcion;
+            popup.classList.add('activo');
+            document.querySelector('#popup img').src = ruta;
+            document.querySelector('#popup .descripcion').innerHTML = descripcion;
+        });
+    });
+
+    // Listener del boton cerrar-popup
+    document.querySelector('#btn-cerrar-popup').addEventListener('click', () => {
+        popup.classList.remove('activo');
+    });
+
+    // Listener para cerrar popup
+    popup.addEventListener('click', (evt) => {
+        console.log(evt.target.id)
+        evt.target.id === 'popup' ? popup.classList.remove('activo') : '';
+    })
 });
